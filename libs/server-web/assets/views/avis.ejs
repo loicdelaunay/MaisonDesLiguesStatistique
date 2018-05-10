@@ -1,0 +1,74 @@
+<% include header %>
+<% include navbar %>
+
+<div>
+    <h1 class="pb-5">Donnez votre avis !</h1>
+</div>
+
+<div id="app-avis">
+    <!-- Card -->
+    <div class="card card-cascade wider">
+
+        <!-- Card image -->
+        <div class="view gradient-card-header blue-gradient">
+
+            <!-- Title -->
+            <h2 class="card-header-title mb-3">Donnez votre avis sur nos ateliers</h2>
+            <!-- Text -->
+            <p class="mb-0"><i class="fa fa-calendar mr-2"></i>{{date}}</p>
+
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body text-center">
+
+            <!-- Text -->
+            <p class="card-text">choississez l'atelier et donner votre avis.</p>
+
+            <select class="mdb-select">
+                <option value="" disabled selected>Chosir un atelier</option>
+                <option v-for="(value, key, index) in ateliers" value="index">{{value.LIBELLEATELIER}}</option>
+            </select>
+
+            <!-- Form inline with radios -->
+            <form class="form-inline">
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInline1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadiosInline1">
+                        Très satisfait
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInline2" value="option2">
+                    <label class="form-check-label" for="exampleRadiosInline2">
+                        Satisfait
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInline3" value="option3">
+                    <label class="form-check-label" for="exampleRadiosInline3">
+                        Moyennement satisfait
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInline4" value="option3">
+                    <label class="form-check-label" for="exampleRadiosInline4">
+                        Pas du tout satisfait
+                    </label>
+                </div>
+
+            </form>
+            <!-- Form inline with radios -->
+            <a href="#!" class="blue-text d-flex flex-row-reverse p-2">
+                <h5 class="waves-effect waves-light">Voir les resultats<i class="fa fa-angle-double-right ml-2"></i></h5>
+            </a>
+
+        </div>
+        <!-- Card content -->
+
+    </div>
+</div>
+<!-- Card -->
+
+<% include footer %>

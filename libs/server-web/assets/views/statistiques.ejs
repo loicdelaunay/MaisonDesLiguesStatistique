@@ -1,0 +1,36 @@
+<%include header%>
+<%include navbar%>
+
+<!-- Titre -->
+<div>
+<h1>Statistiques</h1>
+</div>
+
+<!--Card group-->
+<div id="app-process" class="card-group">
+
+    <!--Card-->
+    <div class="card mb-4" v-for="process in processes">
+
+        <!--Card content-->
+        <div class="card-body">
+
+            <!--Title-->
+            <h4 class="card-title">{{process.url}}</h4>
+
+            <!--Text-->
+            <p class="card-text">Informations :.</p>
+            <span class="badge cyan"><i class="fas fa-hdd"></i> Size : {{process.size}}</span>
+            <span class="badge purple "><i class="fas fa-cloud-download-alt"></i> Speed : {{process.speed}}</span>
+            <span class="badge indigo"><i class="fas fa-clock"></i> Recording time : {{process.time}}</span>
+
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        </div>
+        <!--Card content-->
+    </div>
+    <!--Card-->
+
+</div>
+<!--Card group-->
+
+<%include footer%>

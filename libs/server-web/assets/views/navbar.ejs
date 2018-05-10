@@ -1,0 +1,56 @@
+<!--Main Navigation-->
+<header>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <div class="container-fluid">
+
+            <!-- Brand -->
+            <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/material-design-for-bootstrap/"
+               target="_blank">
+                <strong class="blue-text">Maison des ligues statistiques</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Sidebar -->
+    <div class="sidebar-fixed position-fixed">
+
+        <a class="logo-wrapper waves-effect">
+            <img src="/img/logo.png" class="img-fluid" alt="">
+        </a>
+
+        <div class="list-group list-group-flush">
+            <a href="/" class="list-group-item waves-effect <% if (page === "Avis") { %> <%= "active" %> <% } %>">
+                <i class="fas fa-home mr-3"></i>Avis
+            </a>
+        </div>
+        <div class="list-group list-group-flush">
+            <a href="/Statistiques"
+               class="list-group-item waves-effect <% if (page === "Statistiques") { %> <%= "active" %> <% } %>">
+                <i class="fas fa-video mr-3"></i>Statistiques
+            </a>
+        </div>
+    </div>
+    <!-- Sidebar -->
+
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main class="pt-5 mx-lg-5">
+    <div class="container-fluid mt-5">
