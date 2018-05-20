@@ -4,7 +4,7 @@
 
 //Création du global root folder
 global.__root = __dirname;
-global.version = 0.1;
+global.version = "1.0a";
 
 //Autoloader maison
 require(__dirname + '/libs/autoloader/app');

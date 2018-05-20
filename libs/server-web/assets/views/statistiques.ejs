@@ -1,36 +1,105 @@
-<%include header%>
-<%include navbar%>
+<% include header %>
+<% include navbar %>
 
 <!-- Titre -->
 <div>
-<h1>Statistiques</h1>
+    <h1>Statistiques</h1>
 </div>
 
 <!--Card group-->
-<div id="app-process" class="card-group">
+<div id="app-statistique">
 
-    <!--Card-->
-    <div class="card mb-4" v-for="process in processes">
-
-        <!--Card content-->
-        <div class="card-body">
-
-            <!--Title-->
-            <h4 class="card-title">{{process.url}}</h4>
-
-            <!--Text-->
-            <p class="card-text">Informations :.</p>
-            <span class="badge cyan"><i class="fas fa-hdd"></i> Size : {{process.size}}</span>
-            <span class="badge purple "><i class="fas fa-cloud-download-alt"></i> Speed : {{process.speed}}</span>
-            <span class="badge indigo"><i class="fas fa-clock"></i> Recording time : {{process.time}}</span>
-
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+    <!-- Loading bar-->
+    <div class="preloader-wrapper big active" v-show="isLoading">
+        <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
         </div>
-        <!--Card content-->
+        <div class="spinner-layer spinner-red">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+        <div class="spinner-layer spinner-yellow">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+        <div class="spinner-layer spinner-green">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
     </div>
-    <!--Card-->
+
+    <span v-show="!isLoading">
+        <div class="col12 mt-5">
+        <!-- Card Wider -->
+        <div class="card card-cascade wider">
+            <!-- Card image -->
+            <div class="view overlay white">
+                <canvas id="statistique-global"></canvas>
+            </div>
+            <!-- Card content -->
+            <div class="card-body text-center">
+                <!-- Title -->
+                <h4 class="card-title"><strong>Nombre d'avis total : {{aterlierNbrAvisTotal}}</strong></h4>
+                <!-- Subtitle -->
+                <h5 class="blue-text pb-2"><strong>TOTAL DES ATELIERS</strong></h5>
+            </div>
+        </div>
+            <!-- Card Wider -->
+    </div>
+        <!-- Card -->
+
+    <div class="col12 mt-5" v-for="atelier in ateliers">
+        <!-- Card Wider -->
+        <div class="card card-cascade wider">
+
+            <!-- Card image -->
+            <div class="view overlay white">
+                <canvas v-bind:id="'statistique'+atelier.ID"></canvas>
+            </div>
+            <!-- Card content -->
+            <div class="card-body text-center">
+                <!-- Title -->
+                <h4 class="card-title"><strong>Nombre d'avis : {{atelier.NBAVIS}}</strong></h4>
+                <!-- Subtitle -->
+                <h5 class="blue-text pb-2"><strong>{{atelier.LIBELLEATELIER}}</strong></h5>
+            </div>
+
+        </div>
+        <!-- Card Wider -->
+    </div>
+        <!-- Card -->
+    </span>
 
 </div>
 <!--Card group-->
 
-<%include footer%>
+<% include footer %>

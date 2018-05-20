@@ -1,4 +1,7 @@
 {
   "server_port": 90,
-  "default_folder": "default"
+  "default_folder": "default",
+  "user": "employemdl",
+  "password": "employemdl",
+  "connectString": "localhost/XE"
 }

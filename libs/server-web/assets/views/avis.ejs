@@ -25,40 +25,42 @@
             <!-- Text -->
             <p class="card-text">choississez l'atelier et donner votre avis.</p>
 
-            <select class="mdb-select">
+            <select class="mdb-select" id="choix-atelier">
                 <option value="" disabled selected>Chosir un atelier</option>
-                <option v-for="(value, key, index) in ateliers" value="index">{{value.LIBELLEATELIER}}</option>
+                <option v-for="(value, key, index) in ateliers" v-bind:value="key">{{value.LIBELLEATELIER}}</option>
             </select>
 
             <!-- Form inline with radios -->
             <form class="form-inline">
 
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInline1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadiosInline1">
+                    <input class="form-check-input" type="radio" name="avis" id="tres-satisfait" value="0" checked>
+                    <label class="form-check-label" for="tres-satisfait">
                         Très satisfait
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInline2" value="option2">
-                    <label class="form-check-label" for="exampleRadiosInline2">
+                    <input class="form-check-input" type="radio" name="avis" id="satisfait" value="1">
+                    <label class="form-check-label" for="satisfait">
                         Satisfait
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInline3" value="option3">
-                    <label class="form-check-label" for="exampleRadiosInline3">
+                    <input class="form-check-input" type="radio" name="avis" id="moyennement-satisfait" value="2">
+                    <label class="form-check-label" for="moyennement-satisfait">
                         Moyennement satisfait
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInline4" value="option3">
-                    <label class="form-check-label" for="exampleRadiosInline4">
+                    <input class="form-check-input" type="radio" name="avis" id="pas-satisfait" value="3">
+                    <label class="form-check-label" for="pas-satisfait">
                         Pas du tout satisfait
                     </label>
                 </div>
 
             </form>
+
+            <button class="mt-xl-4 btn blue-gradient btn-rounded" v-on:click="addAvis()">Envoyer</button>
             <!-- Form inline with radios -->
             <a href="#!" class="blue-text d-flex flex-row-reverse p-2">
                 <h5 class="waves-effect waves-light">Voir les resultats<i class="fa fa-angle-double-right ml-2"></i></h5>

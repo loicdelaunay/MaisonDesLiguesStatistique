@@ -25,10 +25,9 @@ class serverWeb {
 
         //Post un avis
         app.post('/addAvis/', function (req, res) {
-            global.records.push(new global.class_record(req.body.url, req.body.quality, req.body.folder, req.body.startAt, req.body.endAt));
-            global.module_datamanager.saveRecords();
-            io.emit('records', global.records);
-            res.json("ok");
+            global.module_oracledb.addAvisAtelier(req.body.atelier,req.body.note).then(function(result){
+                res.json("ok");
+            });
         });
 
         /** ROUTAGE DE BASE GET **/
@@ -62,15 +61,7 @@ class serverWeb {
 
         //Ecoute sur le port
         http.listen(global.config.server_port, function () {
-            console.log('listening on *:' + global.config.server_port);
-        });
-
-        //Gestion de socket.io
-        io.on('connection', function (socket) {
-            console.log('Utilisateur connecté');
-            socket.on('disconnect', function () {
-                console.log('Utilisateur déconnecté');
-            });
+            console.log('serveur web écoute sur *:' + global.config.server_port);
         });
 
     }
