@@ -3,8 +3,7 @@
  */
 class oracledb {
 
-    constructor() {
-    }
+    constructor() {}
 
     /**
      * Test de connection à la bdd
@@ -13,8 +12,7 @@ class oracledb {
         console.log("Connection à la base de données ...");
         var oracledb = require('oracledb');
         oracledb.outFormat = oracledb.OBJECT;
-        oracledb.getConnection(
-            {
+        oracledb.getConnection({
                 user: global.config.user,
                 password: global.config.password,
                 connectString: global.config.connectString
@@ -36,13 +34,11 @@ class oracledb {
             let conn;
 
             try {
-                conn = await oracledb.getConnection(
-                    {
-                        user: global.config.user,
-                        password: global.config.password,
-                        connectString: global.config.connectString
-                    }
-                );
+                conn = await oracledb.getConnection({
+                    user: global.config.user,
+                    password: global.config.password,
+                    connectString: global.config.connectString
+                });
 
                 let result = await conn.execute(
                     'select * from ' + table,
@@ -56,8 +52,6 @@ class oracledb {
                 if (conn) {
                     try {
                         await conn.close();
-
-                        console.log('Connection fermée');
                     } catch (err) {
                         console.log('Erreur pendant la fermeture de la connexion', err);
                     }
@@ -75,13 +69,11 @@ class oracledb {
         idAtelier = parseInt(idAtelier);
 
         try {
-            conn = await oracledb.getConnection(
-                {
-                    user: global.config.user,
-                    password: global.config.password,
-                    connectString: global.config.connectString
-                }
-            );
+            conn = await oracledb.getConnection({
+                user: global.config.user,
+                password: global.config.password,
+                connectString: global.config.connectString
+            });
 
             var sql = "";
 
@@ -102,9 +94,8 @@ class oracledb {
             console.log("Execution de la requete ...");
 
             await conn.execute(
-                sql,
-                {
-                    idatelier: idAtelier+1
+                sql, {
+                    idatelier: idAtelier + 1
                 },
                 function (err, result) {
                     if (err) {
