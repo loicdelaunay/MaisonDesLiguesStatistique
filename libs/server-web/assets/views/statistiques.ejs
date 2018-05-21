@@ -57,47 +57,49 @@
         </div>
     </div>
 
-    <span v-show="!isLoading">
-        <div class="col12 mt-5">
-        <!-- Card Wider -->
-        <div class="card card-cascade wider">
-            <!-- Card image -->
-            <div class="view overlay white">
-                <canvas id="statistique-global"></canvas>
-            </div>
-            <!-- Card content -->
-            <div class="card-body text-center">
-                <!-- Title -->
-                <h4 class="card-title"><strong>Nombre d'avis total : {{aterlierNbrAvisTotal}}</strong></h4>
-                <!-- Subtitle -->
-                <h5 class="blue-text pb-2"><strong>TOTAL DES ATELIERS</strong></h5>
-            </div>
-        </div>
+    <div v-show="!isLoading">
+        <div class="col-12 mt-5 mb-5">
             <!-- Card Wider -->
-    </div>
-        <!-- Card -->
-
-    <div class="col12 mt-5" v-for="atelier in ateliers">
-        <!-- Card Wider -->
-        <div class="card card-cascade wider">
-
-            <!-- Card image -->
-            <div class="view overlay white">
-                <canvas v-bind:id="'statistique'+atelier.ID"></canvas>
+            <div class="card card-cascade wider">
+                <!-- Card image -->
+                <div class="view overlay white">
+                    <canvas id="statistique-global"></canvas>
+                </div>
+                <!-- Card content -->
+                <div class="card-body text-center">
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Nombre d'avis total : {{aterlierNbrAvisTotal}}</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>TOTAL DES ATELIERS</strong></h5>
+                </div>
             </div>
-            <!-- Card content -->
-            <div class="card-body text-center">
-                <!-- Title -->
-                <h4 class="card-title"><strong>Nombre d'avis : {{atelier.NBAVIS}}</strong></h4>
-                <!-- Subtitle -->
-                <h5 class="blue-text pb-2"><strong>{{atelier.LIBELLEATELIER}}</strong></h5>
-            </div>
-
+            <!-- Card Wider -->
         </div>
-        <!-- Card Wider -->
-    </div>
+
         <!-- Card -->
-    </span>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-xl-4 mb-4" v-for="atelier in ateliers">
+                <!-- Card Wider -->
+                <div class="card card-cascade wider">
+
+                    <!-- Card image -->
+                    <div class="view overlay white">
+                        <canvas v-bind:id="'statistique'+atelier.ID"></canvas>
+                    </div>
+                    <!-- Card content -->
+                    <div class="card-body text-center">
+                        <!-- Title -->
+                        <h4 class="card-title"><strong>Nombre d'avis : {{atelier.NBAVIS}}</strong></h4>
+                        <!-- Subtitle -->
+                        <h5 class="blue-text pb-2"><strong>{{atelier.LIBELLEATELIER}}</strong></h5>
+                    </div>
+
+                </div>
+                <!-- Card Wider -->
+            </div>
+            <!-- Card -->
+        </div>
+    </div>
 
 </div>
 <!--Card group-->

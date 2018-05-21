@@ -1,5 +1,5 @@
 // Material Select Initialization
-$(document).ready(function() {
+$(document).ready(function () {
     $('.mdb-select').material_select();
 });
 
@@ -13,3 +13,27 @@ $(function () {
 
 //Socket.io connection
 const socket = io();
+
+//Option toastr
+toastr.options = {
+    "closeButton": true, // true/false
+    "debug": false, // true/false
+    "newestOnTop": true, // true/false
+    "progressBar": true, // true/false
+    "positionClass": "toast-bottom-right", // toast-top-right / toast-top-left / toast-bottom-right / toast-bottom-left
+    "preventDuplicates": false, //true/false
+    "onclick": null,
+    "showDuration": "300", // in milliseconds
+    "hideDuration": "1000", // in milliseconds
+    "timeOut": "5000", // in milliseconds
+    "extendedTimeOut": "1000", // in milliseconds
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+};
+
+// SideNav Initialization
+$(".button-collapse").sideNav();
+
+new WOW().init();

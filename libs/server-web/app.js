@@ -5,13 +5,10 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const serverWebFolder = global.__root + '/libs/server-web/';
 const serverWebFolderViews = global.__root + '/libs/server-web/assets/views/';
-var default_download_folder = "";
-//Set download default folder with config file
-if (global.config.default_folder === "default") {
-    default_download_folder = global.__root + '\\data\\record\\'
-} else {
-    default_download_folder = global.config.default_folder
-}
+
+//Chargement du favicon
+var favicon = require('serve-favicon');
+app.use(favicon(serverWebFolder + 'assets/favicon.ico'));
 
 class serverWeb {
     constructor() {

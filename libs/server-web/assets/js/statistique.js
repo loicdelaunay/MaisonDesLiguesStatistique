@@ -49,8 +49,8 @@ function loadStatistique() {
                 datasets: [
                     {
                         data: [unAtelier.AVISTRESSATISFAIT, unAtelier.AVISSATISFAIT, unAtelier.AVISMOYSATISFAIT, unAtelier.AVISPASDUTOUTSATISFAIT],
-                        backgroundColor: ["#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-                        hoverBackgroundColor: ["#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+                        backgroundColor: ["#34abe1", "#34ca21", "#ff9509", "#ff3718"],
+                        hoverBackgroundColor: ["#138ae1", "#199b0b", "#a86206", "#8e1f0d"],
                     }
                 ]
             },
@@ -71,8 +71,8 @@ function loadStatistique() {
             datasets: [
                 {
                     data: [avisGlobal.TRESSATISFAIT, avisGlobal.SATISFAIT, avisGlobal.MOYENSATISFAIT, avisGlobal.PASDUTOUTSATISFAIT],
-                    backgroundColor: ["#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-                    hoverBackgroundColor: ["#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+                    backgroundColor: ["#34abe1", "#34ca21", "#ff9509", "#ff3718"],
+                    hoverBackgroundColor: ["#138ae1", "#199b0b", "#a86206", "#8e1f0d"],
                 }
             ]
         },

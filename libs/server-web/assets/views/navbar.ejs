@@ -1,55 +1,51 @@
-<!--Main Navigation-->
+<!--Double navigation-->
 <header>
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav sn-bg-2 fixed">
+        <ul class="custom-scrollbar">
 
+            <!-- Logo -->
+            <li>
+                <div class="logo-wrapper waves-light mb-5 pb-5 mt-3">
+                    <h1 class="font-weight-bold text-center">MDL</h1>
+                </div>
+            </li>
+            <!--/. Logo -->
+
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-chevron-right"></i> Statistiques<i class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul class="list-unstyled">
+                                <li><a href="/" class="waves-effect">Envoyer un avis</a>
+                                </li>
+                                <li><a href="/statistiques" class="waves-effect">Voir les statistiques</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+        </ul>
+        <div class="sidenav-bg mask-strong"></div>
+    </div>
+    <!--/. Sidebar navigation -->
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-        <div class="container-fluid">
-
-            <!-- Brand -->
-            <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/material-design-for-bootstrap/"
-               target="_blank">
-                <strong class="blue-text">Maison des ligues statistiques</strong>
-            </a>
-
-            <!-- Collapse -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            </div>
-
+    <nav class="navbar fixed-top white black-text navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+        <!-- SideNav slide-out button -->
+        <div class="float-left">
+            <a href="#" data-activates="slide-out" class="button-collapse black-text"><i class="fa fa-bars"></i></a>
+        </div>
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn mr-auto">
+            <p>Maison des ligues - Statistiques</p>
         </div>
     </nav>
-    <!-- Navbar -->
-
-    <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed">
-
-        <a class="logo-wrapper waves-effect">
-            <img src="/img/logo.png" class="img-fluid" alt="">
-        </a>
-
-        <div class="list-group list-group-flush">
-            <a href="/" class="list-group-item waves-effect <% if (page === "Avis") { %> <%= "active" %> <% } %>">
-                <i class="fas fa-home mr-3"></i>Avis
-            </a>
-        </div>
-        <div class="list-group list-group-flush">
-            <a href="/Statistiques"
-               class="list-group-item waves-effect <% if (page === "Statistiques") { %> <%= "active" %> <% } %>">
-                <i class="fas fa-video mr-3"></i>Statistiques
-            </a>
-        </div>
-    </div>
-    <!-- Sidebar -->
-
+    <!-- /.Navbar -->
 </header>
-<!--Main Navigation-->
+<!--/.Double navigation-->
 
 <!--Main layout-->
 <main class="pt-5 mx-lg-5">
