@@ -1,5 +1,5 @@
 /**
- * SERVEUR AUTORECORD STREAM
+ * SERVEUR MDL STATISTIQUE
  */
 
 //Création du global root folder

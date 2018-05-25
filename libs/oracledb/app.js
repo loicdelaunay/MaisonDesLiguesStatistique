@@ -103,7 +103,7 @@ class oracledb {
                         conn.close();
                         return;
                     }
-                    console.log("ok" + result.rowsAffected);
+                    console.log("Avis atelier ajouté");
                     conn.close();
                 });
             console.log("Fin de la requete");
