@@ -14,7 +14,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.3",
     "moment": "^2.21.0",
-    "npm": "^5.8.0",
+    "npm": "^6.14.6",
     "oracledb": "git+https://github.com/oracle/node-oracledb.git",
     "serve-favicon": "^2.5.0",
     "shelljs": "^0.8.1",
