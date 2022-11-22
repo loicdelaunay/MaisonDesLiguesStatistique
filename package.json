@@ -18,6 +18,6 @@
     "oracledb": "git+https://github.com/oracle/node-oracledb.git",
     "serve-favicon": "^2.5.0",
     "shelljs": "^0.8.1",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.5.0"
   }
 }
